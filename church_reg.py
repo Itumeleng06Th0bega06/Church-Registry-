@@ -21,14 +21,14 @@ with col1:
         # set conditions for the execution
         if submit:
             if name and place and gender and contact:# we check if required fields are filled and store the info in a dict.
-                members_info=[name,
-                      place,
-                      gender,
-                      att,
-                      family,
-                      contact]
+                members_info=[{"Name":name,
+                               "Place":place,
+                                "Gender":gender,
+                                "Attendance":att,
+                                "Family":family,
+                                "Contacts":contact}]
                 st.session_state.all_members_info.append(members_info)# we append the info back to the **initialization**            
-                #st.write(st.session_state.all_members_info)
+                #print(st.session_state.all_members_info)
                 st.success("Successfully Registered!")
             else:
                 st.error("Please fill out all required fields.")
